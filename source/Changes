@@ -2,6 +2,13 @@
 Feature oriented Revision history for Devel-CoverX-Covered
 ==========================================================
 
+{{$NEXT}}
+
+* Bumped Cover version to 13
+
+* Fixed problem highlighted by more recent Moose
+
+
 
 0.012
 -----
