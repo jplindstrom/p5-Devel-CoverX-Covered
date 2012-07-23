@@ -25,7 +25,7 @@ use DBIx::Simple;
 use DBD::SQLite;
 use File::Path;
 use File::chdir;
-use Path::Class;
+use Path::Class qw/ file /;
 use Memoize;
 
 
