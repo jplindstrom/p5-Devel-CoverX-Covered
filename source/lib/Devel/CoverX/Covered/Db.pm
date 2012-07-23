@@ -265,7 +265,7 @@ sub collect_runs {
         for my $run_db_dir ($self->get_run_dirs()) {
             my $cover_db = Devel::Cover::DB->new(db => $self->dir);
 
-            my $run_db_file = "$run_db_dir/cover.12";  #Eeh, refactor
+            my $run_db_file = "$run_db_dir/cover.13";  #Eeh, refactor
             -e $run_db_file or warn("No run db ($run_db_file)\n"), next;
             $cover_db->read($run_db_file);
 
