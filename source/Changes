@@ -4,6 +4,8 @@ Feature oriented Revision history for Devel-CoverX-Covered
 
 {{$NEXT}}
 
+0.012 -- 2012-07-23 16:38:42 UTC
+
 * Bumped Cover version to 13
 
 * Fixed problem highlighted by more recent Moose
