@@ -214,6 +214,14 @@ PerlySense can also highlight subroutine coverage in the source code.
 
 =head2 Vim
 
+There is a vim plugin at L<https://github.com/omega/vim-covered>, which
+provides functions for re-running tests covering the current subroutine, or if
+you are in a test file, re-run that testfile. It can also show files covering
+the current file, and what modules are covered by the current test file. It
+shows TAP output syntax highlighten in a seperate buffer that updates when you
+re-run the tests, making the feedback cycle (if your tests are quick) quite
+nice.
+
 Ovid provides similar key bindings here:
 L<http://use.perl.org/~Ovid/journal/36280>.
 
