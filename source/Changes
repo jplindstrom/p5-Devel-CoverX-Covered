@@ -4,6 +4,12 @@ Feature oriented Revision history for Devel-CoverX-Covered
 
 {{$NEXT}}
 
+* Mention vim-covered in the POD
+
+
+
+0.014 -- 2013-08-23 14:39:33 UTC
+
 * Build cleanup to get the version number correct, etc.
 
 
