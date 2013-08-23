@@ -1,4 +1,3 @@
-
 =head1 NAME
 
 Devel::CoverX::Covered - Collect and report caller (test file) and
@@ -253,7 +252,7 @@ efficiently.
 
 use strict;
 package Devel::CoverX::Covered;
-our $VERSION = 0.012;
+
 
 
 
