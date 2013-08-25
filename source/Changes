@@ -4,6 +4,12 @@ Feature oriented Revision history for Devel-CoverX-Covered
 
 {{$NEXT}}
 
+* Release to sync up with what's on CPAN
+
+
+
+0.014 -- 2013-08-25 15:26:57 UTC
+
 * Mention vim-covered in the POD
 
 
