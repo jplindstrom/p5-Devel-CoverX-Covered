@@ -6,6 +6,8 @@ Feature oriented Revision history for Devel-CoverX-Covered
 
 * Add SQL::Abstract to deps, since it causes CPANTESTERS fails
 
+* Bump the Devel::Cover db version file to 14 and dep to 1.17
+
 
 
 0.015 -- 2013-08-25 15:29:21 UTC
