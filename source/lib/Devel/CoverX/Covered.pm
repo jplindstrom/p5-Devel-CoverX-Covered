@@ -121,7 +121,7 @@ prone to change as a result of feedback.
           --rex_skip_source_file='{app_cpan_deps/}'
 
   #Post process to generate covered database
-  cover -report Html_basic
+  cover -report Html_basic  # Needs Template installed
 
 
 =head2 During development
