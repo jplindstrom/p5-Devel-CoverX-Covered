@@ -4,6 +4,10 @@ Feature oriented Revision history for Devel-CoverX-Covered
 
 {{$NEXT}}
 
+* Add SQL::Abstract to deps, since it causes CPANTESTERS fails
+
+
+
 0.015 -- 2013-08-25 15:29:21 UTC
 
 * Release to sync up with what's on CPAN
