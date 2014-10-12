@@ -1,0 +1,81 @@
+#+SEQ_TODO:  TODO DOING DONE
+* Overview
+** Devel::Cover - 1m
+** Devel::CoverX::Covered - 1m
+** Large Code bases - 1m
+** CLI - 1m
+** Emacs PerlySense - 1m
+* Lightning Talk
+** Beyond Devel::Cover
+*** Johan Lindstrom
+** Devel::Cover
+** What does Devel::Cover do?
+*** Source code
+*** Tests
+*** How much of the Code do the Tests cover
+*** (image of tests, source code, next to each other)
+** Levels of detail
+*** Sub
+*** Statement
+*** Branch
+*** Condition
+** Reports
+*** cover_db
+*** (image)
+** Coarse Granularity
+*** (image of tests, source) again
+** Fine Granularity
+*** (image of test files, source files)
+** Devel::CoverX::Covered
+*** "Collect and report caller (test file) and covered (source file) statistics from the cover_db"
+*** [#C] Extract caller and covered data from the cover_db
+** How to run
+*** Normal Devel::Cover
+*** Covered covered runs
+**** sqlite database
+** Large code bases
+*** Difficult to find which bits tests which features
+**** Unit tests may have well named test classes
+**** Integration / Acceptance tests cover more layers
+*** Special idioms
+*** Navigating back and forth
+** CLI
+*** Query the covered database per source file
+covered covering --source_file=lib/MyApp/DoStuff.pm
+t/myapp-do_stuff.t
+t/myapp-do_stuff/edge_case1.t
+t/myapp-do_stuff/edge_case2.t
+*** Query the covered database per source file and a specific sub
+covered covering --source_file=lib/MyApp/DoStuff.pm --sub=get_odd_values
+t/myapp-do_stuff/edge_case1.t
+*** Query the covered database per test file
+covered by --test_file=t/myapp-do_stuff.t
+lib/MyApp/DoStuff.pm
+lib/MyApp/DoStuff/DoOtherStuff.pm
+*** Query the covered database for coverage details of a source file
+covered subs --source_file=lib/MyApp/DoStuff.pm
+new       4
+as_string 32
+as_xml    0
+do_stuff  4
+** Emacs and PerlySense
+*** Useful but not very Usable
+*** Navigate from code to tests
+**** (screen shot)
+*** Navigate from test to code
+**** (screen shot)
+*** Highlight covered subs
+**** (screen shot)
+**** Avoid christmas tree look
+** CPAN
+*** Install
+**** cpanm Devel::CoverX::Covered
+**** cpanm Devel::PerlySense
+** Bonus slides
+** Other uses
+*** How "unity" is a test?
+*** Look up which tests are covering the changed code
+** Cavetat for running the test suite
+*** Works fine with .t files
+*** Test::Class / Test::Aggregate
+**** Needs special test runner that 
