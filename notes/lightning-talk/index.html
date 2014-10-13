@@ -61,6 +61,27 @@
       .strike {
         text-decoration: line-through;
       }
+      
+      
+      
+      /* Presentation CSS */
+      table.coverage td {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 6px;
+      }
+      td.covered {
+        background-color: #060;
+      }
+      td.covered1 {
+        background-color: #060;
+      }
+      td.covered2 {
+        background-color: #096;
+      }
+      td.covered3 {
+        background-color: #0C9;
+      }
     </style>
     <!-- If the query includes 'print-pdf', use the PDF print sheet -->
     <script>
@@ -76,9 +97,39 @@
         <section>
           <h1>Beyond</h1>
           <h1>Devel::Cover</h1>
+          <p>Johan Lindstrom / @jplindstrom</p>
         </section>
         <section>
-          <h2>Devel::CoverX::Covered</h2>
+          <h3>Which code is covered by tests?</h3>
+          <div>
+            <table class='coverage' width='100%'>
+              <tbody>
+                <tr>
+                  <td class='covered'>App::Controller::Book</td>
+                </tr>
+                <tr>
+                  <td>App::Controller::Author</td>
+                </tr>
+                <tr>
+                  <td>App::Schema::Book</td>
+                </tr>
+                <tr>
+                  <td>App::Schema::Author</td>
+                </tr>
+                <tr>
+                  <td>App::Subscription</td>
+                </tr>
+                <tr>
+                  <td>Book::ISBN</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <aside class='notes'>
+            <p>Code coverage tool</p>
+            <p>Run with D::C enabled</p>
+            <p>Which part of the source is tested by your test suite</p>
+          </aside>
         </section>
         <section>
           <h1>Basic markup</h1>

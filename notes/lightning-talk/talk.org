@@ -9,7 +9,7 @@
 ** Beyond Devel::Cover
 *** Johan Lindstrom
 ** Devel::Cover
-** What does Devel::Cover do?
+** Which code is covered by tests?
 *** Source code
 *** Tests
 *** How much of the Code do the Tests cover

@@ -64,6 +64,29 @@
         text-decoration: line-through;
       }
 
+
+
+      /* Presentation CSS */
+      table.coverage td {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 6px;
+      }
+      td.covered {
+        background-color: #060;
+      }
+      td.covered1 {
+        background-color: #060;
+      }
+      td.covered2 {
+        background-color: #096;
+      }
+      td.covered3 {
+        background-color: #0C9;
+      }
+
+
+
     / If the query includes 'print-pdf', use the PDF print sheet
     :javascript
       document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
@@ -78,8 +101,36 @@
           %h1 Beyond
           %h1 Devel::Cover
 
+          %p Johan Lindstrom / @jplindstrom
+
+
         %section
-          %h2 Devel::CoverX::Covered
+          %h3 Which code is covered by tests?
+
+          %div
+            %table.coverage{ :width => "100%" }
+              %tbody
+                %tr
+                  %td.covered App::Controller::Book
+                %tr
+                  %td App::Controller::Author
+                %tr
+                  %td App::Schema::Book
+                %tr
+                  %td App::Schema::Author
+                %tr
+                  %td App::Subscription
+                %tr
+                  %td Book::ISBN
+
+
+
+          %aside.notes
+            %p Code coverage tool
+            %p Run with D::C enabled
+            %p Which part of the source is tested by your test suite
+
+
 
         %section
           %h1 Basic markup
