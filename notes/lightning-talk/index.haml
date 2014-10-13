@@ -173,15 +173,26 @@
 
         %section
           %h2 Reports
-          %h3 Files
+          %p Files
           %div.image
             %img(src = "images/report_files.png")
 
         %section
           %h2 Reports
-          %h3 Source Code
+          %p Source Code
           %div.image
             %img(src = "images/report_file.png")
+
+
+
+
+        %section
+          %h1 Large
+          %h1 Code Bases
+          %ul
+            %li Which bits test which features?
+            %li Special Idioms
+            %li Navigation Tests <-> Source
 
 
 
@@ -217,6 +228,8 @@
                     %td t/subscribe.t
                   %tr
                     %td t/subscribe-unavailable.t
+
+
 
 
 
@@ -370,16 +383,56 @@
                   %tr
                     %td t/subscribe-unavailable.t
 
-                    
-                    
+
 
         %section
           %h2 Devel::CoverX::Covered
 
 
-        %section
-          %h2 How to run
 
+        -# -# Devel::Cover
+        -# %section
+        -#   %h2 How to run
+        -#   %pre
+        -#     %code.perl
+        -#       :preserve
+        -#         &nbsp;
+        -#             # Run with Devel::Cover
+        -#             PERL5OPT=-MDevel::Cover prove -r t
+
+
+
+        -#             # Generate cover_db and report
+        -#             cover -report Html_basic
+        -#         &nbsp;
+
+        -#   %p Devel::Cover incantation
+
+
+        -# -# Devel::CoverX::Covered
+        -# %section
+        -#   %h2 How to run
+        -#   %pre
+        -#     %code.perl
+        -#       :preserve
+        -#         &nbsp;
+        -#             # Run with Devel::Cover
+        -#             PERL5OPT=-MDevel::Cover prove -r t
+
+        -#             covered runs
+
+        -#             # Generate cover_db and report
+        -#             cover -report Html_basic
+        -#         &nbsp;
+
+        -#   %p Devel::CoverX::Covered incantation
+
+
+        %section
+          %h3
+          %h1 SQLite
+          %p &nbsp;
+          %p cover_db --> covered/covered-0.01.db
 
 
 
