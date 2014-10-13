@@ -93,11 +93,6 @@
         background-color: #FFF;
       }
 
-      .big {
-        font-size: 150%;
-      }
-
-
 
     / If the query includes 'print-pdf', use the PDF print sheet
     :javascript
@@ -447,7 +442,7 @@
 
         -# CLI
         %section
-          %h3 Source file to Test file
+          %h3 Source file ==> Test files
           %p &nbsp;
           %pre
             %code.perl
@@ -468,9 +463,9 @@
 
         -# CLI
         %section
-          %h3 Source sub to Test file
+          %h3 Source sub ==> Test files
           %p &nbsp;
-          %pre.big
+          %pre
             %code.perl
               :preserve
                 &nbsp;
@@ -484,7 +479,27 @@
                 &nbsp;
                 &nbsp;
           %p
-            
+
+
+        -# CLI
+        %section
+          %h3 Source files <== Test file
+          %p &nbsp;
+          %pre
+            %code.perl
+              :preserve
+                &nbsp;
+                &nbsp;
+                    covered <b>by</b> \
+                        --test_file=t/myapp-do_stuff.t
+
+                    lib/MyApp/DoStuff.pm
+                    lib/MyApp/DoStuff/DoOtherStuff.pm
+                &nbsp;
+                &nbsp;
+          %p
+
+
 
 
 
