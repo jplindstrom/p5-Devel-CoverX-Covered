@@ -20,8 +20,7 @@
     <!-- * find the link to add here -->
     <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
-    <!-- Nice fonts combos: -->
-    <!-- http://designshack.net/articles/css/10-great-google-font-combinations-you-can-copy/ -->
+    <link href='index.css' rel='stylesheet'>
     <!-- Override the reveal.js fonts here, after loading them above -->
     <style>
       .reveal h1 {
@@ -71,7 +70,7 @@
         padding-bottom: 6px;
       }
       td.covered {
-        background-color: #060;
+        background-color: #096;
       }
       td.covered1 {
         background-color: #060;
@@ -86,9 +85,8 @@
     <!-- If the query includes 'print-pdf', use the PDF print sheet -->
     <script>
       document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-            /[if lt IE 9]
-      <script src="reveal.js/lib/js/html5shiv.js"></script>
     </script>
+    <script src="reveal.js/lib/js/html5shiv.js"></script>
   </head>
   <body>
     <div class='reveal'>
@@ -97,33 +95,60 @@
         <section>
           <h1>Beyond</h1>
           <h1>Devel::Cover</h1>
-          <p>Johan Lindstrom / @jplindstrom</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>Johan Lindstrom - @jplindstrom</p>
+        </section>
+        <section>
+          <h1>Devel::Cover</h1>
+          <h3>Code Coverage Tool</h3>
         </section>
         <section>
           <h3>Which code is covered by tests?</h3>
-          <div>
-            <table class='coverage' width='100%'>
-              <tbody>
-                <tr>
-                  <td class='covered'>App::Controller::Book</td>
-                </tr>
-                <tr>
-                  <td>App::Controller::Author</td>
-                </tr>
-                <tr>
-                  <td>App::Schema::Book</td>
-                </tr>
-                <tr>
-                  <td>App::Schema::Author</td>
-                </tr>
-                <tr>
-                  <td>App::Subscription</td>
-                </tr>
-                <tr>
-                  <td>Book::ISBN</td>
-                </tr>
-              </tbody>
-            </table>
+          <p>&nbsp;</p>
+          <div class='side-by-side'>
+            <div class='side'>
+              <table class='coverage' width='100%'>
+                <tbody>
+                  <tr>
+                    <td class='covered'>App::Controller::Book</td>
+                  </tr>
+                  <tr>
+                    <td>App::Controller::Author</td>
+                  </tr>
+                  <tr>
+                    <td class='covered'>App::Schema::Book</td>
+                  </tr>
+                  <tr>
+                    <td>App::Schema::Author</td>
+                  </tr>
+                  <tr>
+                    <td class='covered'>App::Subscription</td>
+                  </tr>
+                  <tr>
+                    <td class='covered'>Book::ISBN</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class='side'>
+              <table class='coverage' width='100%'>
+                <tbody>
+                  <tr>
+                    <td>t/app/controller_book.t</td>
+                  </tr>
+                  <tr>
+                    <td>t/app/schema/book.t</td>
+                  </tr>
+                  <tr>
+                    <td>t/subscribe.t</td>
+                  </tr>
+                  <tr>
+                    <td>t/subscribe-unavailable.t</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
           <aside class='notes'>
             <p>Code coverage tool</p>

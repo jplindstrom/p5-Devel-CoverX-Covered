@@ -1,0 +1,19 @@
+
+
+.side-by-side {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  box-sizing: border-box;
+}
+.side-by-side img {
+  /*    max-width: 7em;*/
+  /*    max-height: 7em;*/ }
+.side-by-side .side {
+  webkit-flex: 1 1 50%;
+  moz-flex: 1 1 50%;
+  flex: 1 1 50%; }
+
+.side-by-side .side + .side {
+  margin-left: 2rem;
+}

@@ -13,6 +13,7 @@
     / For syntax highlighting
     %link{:href => "reveal.js/lib/css/zenburn.css", :rel => "stylesheet"}/
 
+
     / For nice fonts, load more here
     / Go to http://www.google.com/webfonts
     / * Add to collection
@@ -21,8 +22,11 @@
     / * find the link to add here
     %link{ :href=> 'http://fonts.googleapis.com/css?family=Merriweather:400,700', :rel => 'stylesheet', :type => 'text/css'}
     %link{ :href=> 'http://fonts.googleapis.com/css?family=Open+Sans:600', :rel => 'stylesheet', :type => 'text/css'}
-    / Nice fonts combos:
-    / http://designshack.net/articles/css/10-great-google-font-combinations-you-can-copy/
+    -# / Nice fonts combos:
+    -# / http://designshack.net/articles/css/10-great-google-font-combinations-you-can-copy/
+
+    %link{ :rel => "stylesheet", :href => "index.css" }
+
 
     / Override the reveal.js fonts here, after loading them above
     :css
@@ -73,7 +77,7 @@
         padding-bottom: 6px;
       }
       td.covered {
-        background-color: #060;
+        background-color: #096;
       }
       td.covered1 {
         background-color: #060;
@@ -90,8 +94,7 @@
     / If the query includes 'print-pdf', use the PDF print sheet
     :javascript
       document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-            /[if lt IE 9]
-      <script src="reveal.js/lib/js/html5shiv.js"></script>
+    <script src="reveal.js/lib/js/html5shiv.js"></script>
   %body
     .reveal
       / Any section element inside of this container is displayed as a slide
@@ -101,27 +104,48 @@
           %h1 Beyond
           %h1 Devel::Cover
 
-          %p Johan Lindstrom / @jplindstrom
+          %p &nbsp;
+          %p &nbsp;
+          %p Johan Lindstrom - @jplindstrom
+
+
+
+        %section
+          %h1 Devel::Cover
+          %h3 Code Coverage Tool
 
 
         %section
           %h3 Which code is covered by tests?
+          %p &nbsp;
 
-          %div
-            %table.coverage{ :width => "100%" }
-              %tbody
-                %tr
-                  %td.covered App::Controller::Book
-                %tr
-                  %td App::Controller::Author
-                %tr
-                  %td App::Schema::Book
-                %tr
-                  %td App::Schema::Author
-                %tr
-                  %td App::Subscription
-                %tr
-                  %td Book::ISBN
+          %div.side-by-side
+            %div.side
+              %table.coverage{ :width => "100%" }
+                %tbody
+                  %tr
+                    %td.covered App::Controller::Book
+                  %tr
+                    %td App::Controller::Author
+                  %tr
+                    %td.covered App::Schema::Book
+                  %tr
+                    %td App::Schema::Author
+                  %tr
+                    %td.covered App::Subscription
+                  %tr
+                    %td.covered Book::ISBN
+            %div.side
+              %table.coverage{ :width => "100%" }
+                %tbody
+                  %tr
+                    %td t/app/controller_book.t
+                  %tr
+                    %td t/app/schema/book.t
+                  %tr
+                    %td t/subscribe.t
+                  %tr
+                    %td t/subscribe-unavailable.t
 
 
 
