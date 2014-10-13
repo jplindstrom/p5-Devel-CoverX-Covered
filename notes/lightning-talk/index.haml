@@ -2,7 +2,7 @@
 %html{:lang => "en"}
   %head
     %meta{:charset => "utf-8"}/
-    %title PRESENTATION TITLE
+    %title Beyond Devel::Cover
     %meta{:content => "Devel::CoverX::Covered Lightning Talk", :name => "description"}/
     %meta{:content => "Johan Lindstrom", :name => "author"}/
     %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}/
@@ -89,6 +89,10 @@
         background-color: #0C9;
       }
 
+      .image {
+        background-color: #FFF;
+      }
+
 
 
     / If the query includes 'print-pdf', use the PDF print sheet
@@ -112,11 +116,13 @@
 
         %section
           %h1 Devel::Cover
+          %p &nbsp;
           %h3 Code Coverage Tool
 
 
         %section
           %h3 Which code is covered by tests?
+          %p &nbsp;
           %p &nbsp;
 
           %div.side-by-side
@@ -153,6 +159,227 @@
             %p Code coverage tool
             %p Run with D::C enabled
             %p Which part of the source is tested by your test suite
+
+
+        %section
+          %h2 Levels of Detail
+          %p &nbsp;
+          %ul
+            %li Sub
+            %li Statement
+            %li Branch
+            %li Condition
+
+
+        %section
+          %h2 Reports
+          %h3 Files
+          %div.image
+            %img(src = "images/report_files.png")
+
+        %section
+          %h2 Reports
+          %h3 Source Code
+          %div.image
+            %img(src = "images/report_file.png")
+
+
+
+
+        %section
+          %h2 Coarse granularity
+          %p &nbsp;
+
+          %div.side-by-side
+            %div.side
+              %table.coverage{ :width => "100%" }
+                %tbody
+                  %tr
+                    %td.covered App::Controller::Book
+                  %tr
+                    %td App::Controller::Author
+                  %tr
+                    %td.covered App::Schema::Book
+                  %tr
+                    %td App::Schema::Author
+                  %tr
+                    %td.covered App::Subscription
+                  %tr
+                    %td.covered Book::ISBN
+            %div.side
+              %table.coverage{ :width => "100%" }
+                %tbody
+                  %tr
+                    %td t/app/controller_book.t
+                  %tr
+                    %td t/app/schema/book.t
+                  %tr
+                    %td t/subscribe.t
+                  %tr
+                    %td t/subscribe-unavailable.t
+
+
+
+        %section
+          %h2 Fine granularity
+          %p &nbsp;
+
+          %div.side-by-side
+            %div.side
+              %table.coverage{ :width => "100%" }
+                %tbody
+                  %tr
+                    %td.covered1 App::Controller::Book
+                  %tr
+                    %td App::Controller::Author
+                  %tr
+                    %td.covered2 App::Schema::Book
+                  %tr
+                    %td App::Schema::Author
+                  %tr
+                    %td.covered3 App::Subscription
+                  %tr
+                    %td.covered2 Book::ISBN
+            %div.side
+              %table.coverage{ :width => "100%" }
+                %tbody
+                  %tr
+                    %td.covered1 t/app/controller_book.t
+                  %tr
+                    %td &nbsp;
+                  %tr
+                    %td.covered2 t/app/schema/book.t
+                  %tr
+                    %td &nbsp;
+                  %tr
+                    %td.covered3 t/subscribe.t
+                  %tr
+                    %td.covered3 t/subscribe-unavailable.t
+
+
+        -# Schema
+        %section
+          %h2 Fine granularity
+          %p &nbsp;
+
+          %div.side-by-side
+            %div.side
+              %table.coverage{ :width => "100%" }
+                %tbody
+                  %tr
+                    %td App::Controller::Book
+                  %tr
+                    %td App::Controller::Author
+                  %tr
+                    %td.covered2 App::Schema::Book
+                  %tr
+                    %td App::Schema::Author
+                  %tr
+                    %td App::Subscription
+                  %tr
+                    %td Book::ISBN
+            %div.side
+              %table.coverage{ :width => "100%" }
+                %tbody
+                  %tr
+                    %td t/app/controller_book.t
+                  %tr
+                    %td &nbsp;
+                  %tr
+                    %td.covered2 t/app/schema/book.t
+                  %tr
+                    %td &nbsp;
+                  %tr
+                    %td t/subscribe.t
+                  %tr
+                    %td t/subscribe-unavailable.t
+
+
+        -# Controller
+        %section
+          %h2 Fine granularity
+          %p &nbsp;
+
+          %div.side-by-side
+            %div.side
+              %table.coverage{ :width => "100%" }
+                %tbody
+                  %tr
+                    %td.covered1 App::Controller::Book
+                  %tr
+                    %td App::Controller::Author
+                  %tr
+                    %td.covered1 App::Schema::Book
+                  %tr
+                    %td App::Schema::Author
+                  %tr
+                    %td App::Subscription
+                  %tr
+                    %td Book::ISBN
+            %div.side
+              %table.coverage{ :width => "100%" }
+                %tbody
+                  %tr
+                    %td.covered1 t/app/controller_book.t
+                  %tr
+                    %td &nbsp;
+                  %tr
+                    %td t/app/schema/book.t
+                  %tr
+                    %td &nbsp;
+                  %tr
+                    %td t/subscribe.t
+                  %tr
+                    %td t/subscribe-unavailable.t
+
+
+        -# Subscription
+        %section
+          %h2 Fine granularity
+          %p &nbsp;
+
+          %div.side-by-side
+            %div.side
+              %table.coverage{ :width => "100%" }
+                %tbody
+                  %tr
+                    %td.covered3 App::Controller::Book
+                  %tr
+                    %td App::Controller::Author
+                  %tr
+                    %td.covered3 App::Schema::Book
+                  %tr
+                    %td App::Schema::Author
+                  %tr
+                    %td.covered3 App::Subscription
+                  %tr
+                    %td.covered3 Book::ISBN
+            %div.side
+              %table.coverage{ :width => "100%" }
+                %tbody
+                  %tr
+                    %td t/app/controller_book.t
+                  %tr
+                    %td &nbsp;
+                  %tr
+                    %td t/app/schema/book.t
+                  %tr
+                    %td &nbsp;
+                  %tr
+                    %td.covered3 t/subscribe.t
+                  %tr
+                    %td t/subscribe-unavailable.t
+
+                    
+                    
+
+        %section
+          %h2 Devel::CoverX::Covered
+
+
+        %section
+          %h2 How to run
+
 
 
 

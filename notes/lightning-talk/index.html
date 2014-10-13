@@ -2,7 +2,7 @@
 <html lang='en'>
   <head>
     <meta charset='utf-8'>
-    <title>PRESENTATION TITLE</title>
+    <title>Beyond Devel::Cover</title>
     <meta content='Devel::CoverX::Covered Lightning Talk' name='description'>
     <meta content='Johan Lindstrom' name='author'>
     <meta content='yes' name='apple-mobile-web-app-capable'>
@@ -81,6 +81,10 @@
       td.covered3 {
         background-color: #0C9;
       }
+      
+      .image {
+        background-color: #FFF;
+      }
     </style>
     <!-- If the query includes 'print-pdf', use the PDF print sheet -->
     <script>
@@ -101,10 +105,12 @@
         </section>
         <section>
           <h1>Devel::Cover</h1>
+          <p>&nbsp;</p>
           <h3>Code Coverage Tool</h3>
         </section>
         <section>
           <h3>Which code is covered by tests?</h3>
+          <p>&nbsp;</p>
           <p>&nbsp;</p>
           <div class='side-by-side'>
             <div class='side'>
@@ -155,6 +161,300 @@
             <p>Run with D::C enabled</p>
             <p>Which part of the source is tested by your test suite</p>
           </aside>
+        </section>
+        <section>
+          <h2>Levels of Detail</h2>
+          <p>&nbsp;</p>
+          <ul>
+            <li>Sub</li>
+            <li>Statement</li>
+            <li>Branch</li>
+            <li>Condition</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Reports</h2>
+          <h3>Files</h3>
+          <div class='image'>
+            <img src='images/report_files.png'>
+          </div>
+        </section>
+        <section>
+          <h2>Reports</h2>
+          <h3>Source Code</h3>
+          <div class='image'>
+            <img src='images/report_file.png'>
+          </div>
+        </section>
+        <section>
+          <h2>Coarse granularity</h2>
+          <p>&nbsp;</p>
+          <div class='side-by-side'>
+            <div class='side'>
+              <table class='coverage' width='100%'>
+                <tbody>
+                  <tr>
+                    <td class='covered'>App::Controller::Book</td>
+                  </tr>
+                  <tr>
+                    <td>App::Controller::Author</td>
+                  </tr>
+                  <tr>
+                    <td class='covered'>App::Schema::Book</td>
+                  </tr>
+                  <tr>
+                    <td>App::Schema::Author</td>
+                  </tr>
+                  <tr>
+                    <td class='covered'>App::Subscription</td>
+                  </tr>
+                  <tr>
+                    <td class='covered'>Book::ISBN</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class='side'>
+              <table class='coverage' width='100%'>
+                <tbody>
+                  <tr>
+                    <td>t/app/controller_book.t</td>
+                  </tr>
+                  <tr>
+                    <td>t/app/schema/book.t</td>
+                  </tr>
+                  <tr>
+                    <td>t/subscribe.t</td>
+                  </tr>
+                  <tr>
+                    <td>t/subscribe-unavailable.t</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>Fine granularity</h2>
+          <p>&nbsp;</p>
+          <div class='side-by-side'>
+            <div class='side'>
+              <table class='coverage' width='100%'>
+                <tbody>
+                  <tr>
+                    <td class='covered1'>App::Controller::Book</td>
+                  </tr>
+                  <tr>
+                    <td>App::Controller::Author</td>
+                  </tr>
+                  <tr>
+                    <td class='covered2'>App::Schema::Book</td>
+                  </tr>
+                  <tr>
+                    <td>App::Schema::Author</td>
+                  </tr>
+                  <tr>
+                    <td class='covered3'>App::Subscription</td>
+                  </tr>
+                  <tr>
+                    <td class='covered2'>Book::ISBN</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class='side'>
+              <table class='coverage' width='100%'>
+                <tbody>
+                  <tr>
+                    <td class='covered1'>t/app/controller_book.t</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td class='covered2'>t/app/schema/book.t</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td class='covered3'>t/subscribe.t</td>
+                  </tr>
+                  <tr>
+                    <td class='covered3'>t/subscribe-unavailable.t</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>Fine granularity</h2>
+          <p>&nbsp;</p>
+          <div class='side-by-side'>
+            <div class='side'>
+              <table class='coverage' width='100%'>
+                <tbody>
+                  <tr>
+                    <td>App::Controller::Book</td>
+                  </tr>
+                  <tr>
+                    <td>App::Controller::Author</td>
+                  </tr>
+                  <tr>
+                    <td class='covered2'>App::Schema::Book</td>
+                  </tr>
+                  <tr>
+                    <td>App::Schema::Author</td>
+                  </tr>
+                  <tr>
+                    <td>App::Subscription</td>
+                  </tr>
+                  <tr>
+                    <td>Book::ISBN</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class='side'>
+              <table class='coverage' width='100%'>
+                <tbody>
+                  <tr>
+                    <td>t/app/controller_book.t</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td class='covered2'>t/app/schema/book.t</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>t/subscribe.t</td>
+                  </tr>
+                  <tr>
+                    <td>t/subscribe-unavailable.t</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>Fine granularity</h2>
+          <p>&nbsp;</p>
+          <div class='side-by-side'>
+            <div class='side'>
+              <table class='coverage' width='100%'>
+                <tbody>
+                  <tr>
+                    <td class='covered1'>App::Controller::Book</td>
+                  </tr>
+                  <tr>
+                    <td>App::Controller::Author</td>
+                  </tr>
+                  <tr>
+                    <td class='covered1'>App::Schema::Book</td>
+                  </tr>
+                  <tr>
+                    <td>App::Schema::Author</td>
+                  </tr>
+                  <tr>
+                    <td>App::Subscription</td>
+                  </tr>
+                  <tr>
+                    <td>Book::ISBN</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class='side'>
+              <table class='coverage' width='100%'>
+                <tbody>
+                  <tr>
+                    <td class='covered1'>t/app/controller_book.t</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>t/app/schema/book.t</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>t/subscribe.t</td>
+                  </tr>
+                  <tr>
+                    <td>t/subscribe-unavailable.t</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>Fine granularity</h2>
+          <p>&nbsp;</p>
+          <div class='side-by-side'>
+            <div class='side'>
+              <table class='coverage' width='100%'>
+                <tbody>
+                  <tr>
+                    <td class='covered3'>App::Controller::Book</td>
+                  </tr>
+                  <tr>
+                    <td>App::Controller::Author</td>
+                  </tr>
+                  <tr>
+                    <td class='covered3'>App::Schema::Book</td>
+                  </tr>
+                  <tr>
+                    <td>App::Schema::Author</td>
+                  </tr>
+                  <tr>
+                    <td class='covered3'>App::Subscription</td>
+                  </tr>
+                  <tr>
+                    <td class='covered3'>Book::ISBN</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class='side'>
+              <table class='coverage' width='100%'>
+                <tbody>
+                  <tr>
+                    <td>t/app/controller_book.t</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>t/app/schema/book.t</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td class='covered3'>t/subscribe.t</td>
+                  </tr>
+                  <tr>
+                    <td>t/subscribe-unavailable.t</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>Devel::CoverX::Covered</h2>
+        </section>
+        <section>
+          <h2>How to run</h2>
         </section>
         <section>
           <h1>Basic markup</h1>
