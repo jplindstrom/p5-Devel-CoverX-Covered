@@ -85,6 +85,10 @@
       .image {
         background-color: #FFF;
       }
+      
+      .big {
+        font-size: 150%;
+      }
     </style>
     <!-- If the query includes 'print-pdf', use the PDF print sheet -->
     <script>
@@ -473,6 +477,18 @@
           <h1>SQLite</h1>
           <p>&nbsp;</p>
           <p>cover_db --> covered/covered-0.01.db</p>
+        </section>
+        <section>
+          <h3>Source file to Test file</h3>
+          <p>&nbsp;</p>
+          <pre><code class='perl'>&nbsp;&#x000A;&nbsp;&#x000A;    covered <b>covering</b> \&#x000A;        --source_file=lib/MyApp/DoStuff.pm&#x000A;&#x000A;    t/myapp-do_stuff.t&#x000A;    t/myapp-do_stuff/edge_case1.t&#x000A;    t/myapp-do_stuff/edge_case2.t&#x000A;&nbsp;&#x000A;&nbsp;</code></pre>
+          <p></p>
+        </section>
+        <section>
+          <h3>Source sub to Test file</h3>
+          <p>&nbsp;</p>
+          <pre class='big'><code class='perl'>&nbsp;&#x000A;&nbsp;&#x000A;    covered <b>covering</b> \&#x000A;        --source_file=lib/MyApp/DoStuff.pm \&#x000A;        <b>--sub=get_odd_values</b>&#x000A;&#x000A;    t/myapp-do_stuff/edge_case1.t&#x000A;&#x000A;&nbsp;&#x000A;&nbsp;</code></pre>
+          <p></p>
         </section>
         <section>
           <h1>Basic markup</h1>

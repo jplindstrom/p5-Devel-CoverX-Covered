@@ -93,6 +93,10 @@
         background-color: #FFF;
       }
 
+      .big {
+        font-size: 150%;
+      }
+
 
 
     / If the query includes 'print-pdf', use the PDF print sheet
@@ -437,6 +441,51 @@
           %h1 SQLite
           %p &nbsp;
           %p cover_db --> covered/covered-0.01.db
+
+
+
+
+        -# CLI
+        %section
+          %h3 Source file to Test file
+          %p &nbsp;
+          %pre
+            %code.perl
+              :preserve
+                &nbsp;
+                &nbsp;
+                    covered <b>covering</b> \
+                        --source_file=lib/MyApp/DoStuff.pm
+
+                    t/myapp-do_stuff.t
+                    t/myapp-do_stuff/edge_case1.t
+                    t/myapp-do_stuff/edge_case2.t
+                &nbsp;
+                &nbsp;
+          %p
+
+
+
+        -# CLI
+        %section
+          %h3 Source sub to Test file
+          %p &nbsp;
+          %pre.big
+            %code.perl
+              :preserve
+                &nbsp;
+                &nbsp;
+                    covered <b>covering</b> \
+                        --source_file=lib/MyApp/DoStuff.pm \
+                        <b>--sub=get_odd_values</b>
+
+                    t/myapp-do_stuff/edge_case1.t
+
+                &nbsp;
+                &nbsp;
+          %p
+            
+
 
 
 
