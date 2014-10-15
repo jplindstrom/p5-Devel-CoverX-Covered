@@ -1,4 +1,4 @@
 * Stuff
-** TODO Size of code blocks
-** Unicode arrows
+** DONE Size of code blocks
+** TODO Unicode arrows
 ** Larger images
