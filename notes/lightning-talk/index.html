@@ -107,7 +107,7 @@
           <h1>Devel::Cover</h1>
           <p>&nbsp;</p>
           <h3>Code Coverage Tool</h3>
-          <h3>by Paul Johnson</h3>
+          <h3>Paul Johnson</h3>
         </section>
         <section>
           <h3>Which code is covered by tests?</h3>
@@ -463,28 +463,28 @@
           <h3></h3>
           <h1>SQLite</h1>
           <p>&nbsp;</p>
-          <p>cover_db --> covered/covered-0.01.db</p>
+          <p>cover_db ⇝ covered/covered-0.01.db</p>
         </section>
         <section>
-          <h3>Source file ==> Test files</h3>
+          <h3>Source file ⇒ Test files</h3>
           <p>&nbsp;</p>
           <pre><code class='perl'>&nbsp;&#x000A;&nbsp;&#x000A;    covered <b>covering</b> \&#x000A;        --source_file=lib/MyApp/DoStuff.pm&#x000A;&#x000A;&#x000A;    t/myapp-do_stuff/edge_case1.t&#x000A;    t/myapp-do_stuff/edge_case2.t&#x000A;    t/myapp-do_stuff.t&#x000A;&nbsp;&#x000A;&nbsp;</code></pre>
           <p></p>
         </section>
         <section>
-          <h3>Source sub ==> Test files</h3>
+          <h3>Source sub ⇒ Test files</h3>
           <p>&nbsp;</p>
           <pre><code class='perl'>&nbsp;&#x000A;&nbsp;&#x000A;    covered <b>covering</b> \&#x000A;        --source_file=lib/MyApp/DoStuff.pm \&#x000A;        <b>--sub=get_odd_values</b>&#x000A;&#x000A;    t/myapp-do_stuff/edge_case1.t&#x000A;&#x000A;&nbsp;&#x000A;&nbsp;&#x000A;&nbsp;</code></pre>
           <p></p>
         </section>
         <section>
-          <h3>Source files <== Test file</h3>
+          <h3>Source files ⇐ Test file</h3>
           <p>&nbsp;</p>
           <pre><code class='perl'>&nbsp;&#x000A;&nbsp;&#x000A;    covered <b>by</b> \&#x000A;        --test_file=t/myapp-do_stuff.t&#x000A;&#x000A;    lib/MyApp/DoStuff.pm&#x000A;    lib/MyApp/DoStuff/DoOtherStuff.pm&#x000A;&nbsp;&#x000A;&nbsp;&#x000A;&nbsp;&#x000A;&nbsp;</code></pre>
           <p></p>
         </section>
         <section>
-          <h3>Source file ==> Covered Subs</h3>
+          <h3>Source file ⇒ Covered Subs</h3>
           <p>&nbsp;</p>
           <pre><code class='perl'>&nbsp;&#x000A;&nbsp;&#x000A;    covered <b>subs</b> \&#x000A;        --source_file=lib/MyApp/DoStuff.pm&#x000A;&#x000A;    new       4&#x000A;    as_string 32&#x000A;    as_xml    0&#x000A;    do_stuff  4&#x000A;&nbsp;&#x000A;&nbsp;</code></pre>
           <p></p>
@@ -505,14 +505,14 @@
           <h2>Devel::PerlySense</h2>
         </section>
         <section>
-          <h3>Source file ==> Test files</h3>
+          <h3>Source file ⇒ Test files</h3>
           <p>&nbsp;</p>
           <div>
             <img src='images/goto_tests_source_file_other.png'>
           </div>
         </section>
         <section>
-          <h3>Source sub ==> Test files</h3>
+          <h3>Source sub ⇒ Test files</h3>
           <p>&nbsp;</p>
           <div>
             <img src='images/goto_tests_source_sub_other.png'>
@@ -523,10 +523,10 @@
           <h3>covered subs</h3>
           <div class='side-by-side image'>
             <div class='side'>
-              <img src='images/cover_report_sub_green.png'>
+              <img src='images/covered_sub_green_report.png'>
             </div>
             <div class='side'>
-              <img src='images/covered_sub_green.png'>
+              <img src='images/covered_sub_green_source.png'>
             </div>
           </div>
         </section>
@@ -535,10 +535,10 @@
           <h3>uncovered subs</h3>
           <div class='side-by-side image'>
             <div class='side'>
-              <img src='images/cover_report_sub_red.png'>
+              <img src='images/covered_sub_red_report.png'>
             </div>
             <div class='side'>
-              <img src='images/covered_sub_red.png'>
+              <img src='images/covered_sub_red_source.png'>
             </div>
           </div>
         </section>
