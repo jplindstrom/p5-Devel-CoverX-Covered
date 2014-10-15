@@ -8,6 +8,7 @@ blib/
 .build/
 _build/
 cover_db/
+/source/covered/*
 inc/
 Build
 Build.bat
@@ -19,3 +20,4 @@ META.yml
 MYMETA.yml
 nytprof.out
 pm_to_blib
+/source/perltidy.LOG
