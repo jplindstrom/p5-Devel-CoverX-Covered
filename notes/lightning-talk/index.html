@@ -467,19 +467,19 @@
         <section>
           <h3>Source file ==> Test files</h3>
           <p>&nbsp;</p>
-          <pre><code class='perl'>&nbsp;&#x000A;&nbsp;&#x000A;    covered <b>covering</b> \&#x000A;        --source_file=lib/MyApp/DoStuff.pm&#x000A;&#x000A;    t/myapp-do_stuff.t&#x000A;    t/myapp-do_stuff/edge_case1.t&#x000A;    t/myapp-do_stuff/edge_case2.t&#x000A;&nbsp;&#x000A;&nbsp;</code></pre>
+          <pre><code class='perl'>&nbsp;&#x000A;&nbsp;&#x000A;    covered <b>covering</b> \&#x000A;        --source_file=lib/MyApp/DoStuff.pm&#x000A;&#x000A;&#x000A;    t/myapp-do_stuff/edge_case1.t&#x000A;    t/myapp-do_stuff/edge_case2.t&#x000A;    t/myapp-do_stuff.t&#x000A;&nbsp;&#x000A;&nbsp;</code></pre>
           <p></p>
         </section>
         <section>
           <h3>Source sub ==> Test files</h3>
           <p>&nbsp;</p>
-          <pre><code class='perl'>&nbsp;&#x000A;&nbsp;&#x000A;    covered <b>covering</b> \&#x000A;        --source_file=lib/MyApp/DoStuff.pm \&#x000A;        <b>--sub=get_odd_values</b>&#x000A;&#x000A;    t/myapp-do_stuff/edge_case1.t&#x000A;&#x000A;&nbsp;&#x000A;&nbsp;</code></pre>
+          <pre><code class='perl'>&nbsp;&#x000A;&nbsp;&#x000A;    covered <b>covering</b> \&#x000A;        --source_file=lib/MyApp/DoStuff.pm \&#x000A;        <b>--sub=get_odd_values</b>&#x000A;&#x000A;    t/myapp-do_stuff/edge_case1.t&#x000A;&#x000A;&nbsp;&#x000A;&nbsp;&#x000A;&nbsp;</code></pre>
           <p></p>
         </section>
         <section>
           <h3>Source files <== Test file</h3>
           <p>&nbsp;</p>
-          <pre><code class='perl'>&nbsp;&#x000A;&nbsp;&#x000A;    covered <b>by</b> \&#x000A;        --test_file=t/myapp-do_stuff.t&#x000A;&#x000A;    lib/MyApp/DoStuff.pm&#x000A;    lib/MyApp/DoStuff/DoOtherStuff.pm&#x000A;&nbsp;&#x000A;&nbsp;</code></pre>
+          <pre><code class='perl'>&nbsp;&#x000A;&nbsp;&#x000A;    covered <b>by</b> \&#x000A;        --test_file=t/myapp-do_stuff.t&#x000A;&#x000A;    lib/MyApp/DoStuff.pm&#x000A;    lib/MyApp/DoStuff/DoOtherStuff.pm&#x000A;&nbsp;&#x000A;&nbsp;&#x000A;&nbsp;&#x000A;&nbsp;</code></pre>
           <p></p>
         </section>
         <section>
