@@ -93,6 +93,11 @@
         background-color: #FFF;
       }
 
+      section.no-image-border img {
+        border: 0px;
+        box-shadow: 0 0 0px;
+      }
+
 
     / If the query includes 'print-pdf', use the PDF print sheet
     :javascript
@@ -562,7 +567,7 @@
             %img(src = "images/goto_tests_source_sub_other.png")
 
 
-        %section
+        %section.no-image-border
           %h3 Visualise
           %h3 covered subs
           %div.side-by-side.image
@@ -571,7 +576,7 @@
             %div.side
               %img(src = "images/covered_sub_green_source.png")
 
-        %section
+        %section.no-image-border
           %h3 Visualise
           %h3 uncovered subs
           %div.side-by-side.image

@@ -85,6 +85,11 @@
       .image {
         background-color: #FFF;
       }
+      
+      section.no-image-border img {
+        border: 0px;
+        box-shadow: 0 0 0px;
+      }
     </style>
     <!-- If the query includes 'print-pdf', use the PDF print sheet -->
     <script>
@@ -518,7 +523,7 @@
             <img src='images/goto_tests_source_sub_other.png'>
           </div>
         </section>
-        <section>
+        <section class='no-image-border'>
           <h3>Visualise</h3>
           <h3>covered subs</h3>
           <div class='side-by-side image'>
@@ -530,7 +535,7 @@
             </div>
           </div>
         </section>
-        <section>
+        <section class='no-image-border'>
           <h3>Visualise</h3>
           <h3>uncovered subs</h3>
           <div class='side-by-side image'>
