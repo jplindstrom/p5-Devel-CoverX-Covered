@@ -164,8 +164,9 @@
           </div>
           <aside class='notes'>
             <p>Code coverage tool</p>
-            <p>Run with D::C enabled</p>
-            <p>Which part of the source is tested by your test suite</p>
+            <p><-- Test suite -- Source code --></p>
+            <p>Which parts of the Source are tested</p>
+            <p>Some source files are covered, some not</p>
           </aside>
         </section>
         <section>
@@ -174,6 +175,10 @@
           <div class='image'>
             <img src='images/report_files.png'>
           </div>
+          <aside class='notes'>
+            <p>What you get</p>
+            <p>Reports - formats - web page</p>
+          </aside>
         </section>
         <section>
           <h2>Reports</h2>
@@ -181,6 +186,9 @@
           <div class='image'>
             <img src='images/report_file.png'>
           </div>
+          <aside class='notes'>
+            <p>Which lines are covered</p>
+          </aside>
         </section>
         <section>
           <h1>Large</h1>
@@ -190,6 +198,12 @@
             <li>Special Idioms</li>
             <li>Navigation Tests <-> Source</li>
           </ul>
+          <aside class='notes'>
+            <p>Useful. But.</p>
+            <p>Large Code Bases</p>
+            <p>Different set of problems</p>
+            <p>Unit tests sometimes obvious. Integration tests not clear.</p>
+          </aside>
         </section>
         <section>
           <h2>Coarse granularity</h2>
@@ -244,6 +258,11 @@
               </table>
             </div>
           </div>
+          <aside class='notes'>
+            <p>With Devel::Cover</p>
+            <p>Coarse granularity</p>
+            <p>The whole test suite and the whole source tree</p>
+          </aside>
         </section>
         <section>
           <h2>Fine granularity</h2>
@@ -298,6 +317,10 @@
               </table>
             </div>
           </div>
+          <aside class='notes'>
+            <p>What we need is something more like this</p>
+            <p>So we can see which specific test files cover which parts</p>
+          </aside>
         </section>
         <section>
           <h2>Fine granularity</h2>
@@ -352,6 +375,9 @@
               </table>
             </div>
           </div>
+          <aside class='notes'>
+            <p>A Unit test covers a single class</p>
+          </aside>
         </section>
         <section>
           <h2>Fine granularity</h2>
@@ -406,6 +432,9 @@
               </table>
             </div>
           </div>
+          <aside class='notes'>
+            <p>Or maybe two</p>
+          </aside>
         </section>
         <section>
           <h2>Fine granularity</h2>
@@ -460,21 +489,39 @@
               </table>
             </div>
           </div>
+          <aside class='notes'>
+            <p>Whereas a Feature test covers files across the whole stack</p>
+            <p>So this level of detail is interesting</p>
+          </aside>
         </section>
         <section>
           <h2>Devel::CoverX::Covered</h2>
+          <aside class='notes'>
+            <p>With this module</p>
+            <p>Devel::CoverX::Covered</p>
+            <p>you can get that detail</p>
+          </aside>
         </section>
         <section>
           <h3></h3>
           <h1>SQLite</h1>
           <p>&nbsp;</p>
           <p>cover_db ⇝ covered/covered-0.01.db</p>
+          <aside class='notes'>
+            <p>Run Devel::Cover like normal</p>
+            <p>Then you use this module</p>
+            <p>Generates an SQLite database with this extra detail</p>
+            <p>You don't use the SQLite database though</p>
+          </aside>
         </section>
         <section>
           <h3>Source file ⇒ Test files</h3>
           <p>&nbsp;</p>
           <pre><code class='perl'>&nbsp;&#x000A;&nbsp;&#x000A;    covered <b>covering</b> \&#x000A;        --source_file=lib/MyApp/DoStuff.pm&#x000A;&#x000A;&#x000A;    t/myapp-do_stuff/edge_case1.t&#x000A;    t/myapp-do_stuff/edge_case2.t&#x000A;    t/myapp-do_stuff.t&#x000A;&nbsp;&#x000A;&nbsp;</code></pre>
           <p></p>
+          <aside class='notes'>
+            <p>Command line tool</p>
+          </aside>
         </section>
         <section>
           <h3>Source sub ⇒ Test files</h3>
@@ -493,21 +540,44 @@
           <p>&nbsp;</p>
           <pre><code class='perl'>&nbsp;&#x000A;&nbsp;&#x000A;    covered <b>subs</b> \&#x000A;        --source_file=lib/MyApp/DoStuff.pm&#x000A;&#x000A;    new       4&#x000A;    as_string 32&#x000A;    as_xml    0&#x000A;    do_stuff  4&#x000A;&nbsp;&#x000A;&nbsp;</code></pre>
           <p></p>
+          <aside class='notes'>
+            <p>Finally we can take a source file</p>
+            <p>and see whether the subs in it are covered</p>
+            <p>&nbsp;</p>
+          </aside>
         </section>
         <section>
           <h1>Useful</h1>
           <p>vs</p>
           <h1>Usable</h1>
+          <aside class='notes'>
+            <p>All the information we need to deal with Large Code Bases</p>
+            <p>Clearly Useful</p>
+            <p>But not very Usable</p>
+            <p>Quite clunky - typing things in a shell - copy/pasting file names around</p>
+            <p>Break our flow</p>
+          </aside>
         </section>
         <section>
           <h1>Integrated</h1>
           <p>and</p>
           <h1>Automatic</h1>
+          <aside class='notes'>
+            <p>What we want is something</p>
+            <p>Integrated into our editing environment</p>
+            <p>Automated so we don't have to do any manual steps</p>
+          </aside>
         </section>
         <section>
           <h1>Emacs</h1>
           <p>&nbsp;</p>
           <h2>Devel::PerlySense</h2>
+          <aside class='notes'>
+            <p>And if you use Emacs</p>
+            <p>you can get this</p>
+            <p>using the Devel::PerlySense module</p>
+            <p>This is what it looks like then</p>
+          </aside>
         </section>
         <section>
           <h3>Source file ⇒ Test files</h3>
@@ -515,6 +585,12 @@
           <div>
             <img src='images/goto_tests_source_file_other.png'>
           </div>
+          <aside class='notes'>
+            <p>If we're in a source file</p>
+            <p>Go to Other Test Files</p>
+            <p>A dropdown menu with test files</p>
+            <p>Choose one and it will open that file</p>
+          </aside>
         </section>
         <section>
           <h3>Source sub ⇒ Test files</h3>
@@ -522,6 +598,11 @@
           <div>
             <img src='images/goto_tests_source_sub_other.png'>
           </div>
+          <aside class='notes'>
+            <p>Cursor on the sub declaration</p>
+            <p>The tests are limited to just that sub</p>
+            <p>If we have a Test file it also works the other way around</p>
+          </aside>
         </section>
         <section class='no-image-border'>
           <h3>Visualise</h3>
@@ -534,6 +615,11 @@
               <img src='images/covered_sub_green_source.png'>
             </div>
           </div>
+          <aside class='notes'>
+            <p>Finally, we can use that list of subs</p>
+            <p>highlight in the source code itself</p>
+            <p>Look at the sub keyword and the little Green underline</p>
+          </aside>
         </section>
         <section class='no-image-border'>
           <h3>Visualise</h3>
@@ -546,6 +632,13 @@
               <img src='images/covered_sub_red_source.png'>
             </div>
           </div>
+          <aside class='notes'>
+            <p>The Red line means it's not covered at all</p>
+            <p>The decoration is quite discrete -- Intentional</p>
+            <p>We don't want to turn the source into a Christmas Tree</p>
+            <p>We want an environment rich with Ambient information</p>
+            <p>It's there when we need it</p>
+          </aside>
         </section>
         <section>
           <h1>CPAN</h1>
@@ -554,6 +647,9 @@
             <li>cpanm Devel::CoverX::Covered</li>
             <li>cpanm Devel::PerlySense</li>
           </ul>
+          <aside class='notes'>
+            <p>This is how you get it</p>
+          </aside>
         </section>
         <section>
           <h1>GitHub</h1>
@@ -566,11 +662,18 @@
               <a href='https://github.com/jplindstrom/p5-Devel-PerlySense'>https://github.com/jplindstrom/p5-Devel-PerlySense</a>
             </ul>
           </ul>
+          <aside class='notes'>
+            <p>This is how you contribute</p>
+          </aside>
         </section>
         <section data-state='the-end'>
           <h1>__END__</h1>
           <br>
           <h3>Thank you!</h3>
+          <aside class='notes'>
+            <p>And that's how you go Beyond Devel::Cover</p>
+            <p>Thanks for listening</p>
+          </aside>
         </section>
       </div>
     </div>

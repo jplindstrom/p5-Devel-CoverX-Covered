@@ -162,8 +162,9 @@
 
           %aside.notes
             %p Code coverage tool
-            %p Run with D::C enabled
-            %p Which part of the source is tested by your test suite
+            %p <-- Test suite -- Source code -->
+            %p Which parts of the Source are tested
+            %p Some source files are covered, some not
 
 
         -# %section
@@ -182,12 +183,19 @@
           %div.image
             %img(src = "images/report_files.png")
 
+          %aside.notes
+            %p What you get
+            %p Reports - formats - web page
+
+
         %section
           %h2 Reports
           %p Source Code
           %div.image
             %img(src = "images/report_file.png")
 
+          %aside.notes
+            %p Which lines are covered
 
 
 
@@ -199,6 +207,11 @@
             %li Special Idioms
             %li Navigation Tests <-> Source
 
+          %aside.notes
+            %p Useful. But.
+            %p Large Code Bases
+            %p Different set of problems
+            %p Unit tests sometimes obvious. Integration tests not clear.
 
 
 
@@ -238,6 +251,10 @@
                   %tr
                     %td t/subscribe-unavailable.t
 
+          %aside.notes
+            %p With Devel::Cover
+            %p Coarse granularity
+            %p The whole test suite and the whole source tree
 
 
 
@@ -278,6 +295,10 @@
                   %tr
                     %td.covered3 t/subscribe-unavailable.t
 
+          %aside.notes
+            %p What we need is something more like this
+            %p So we can see which specific test files cover which parts
+
 
         -# Schema
         %section
@@ -316,6 +337,8 @@
                   %tr
                     %td t/subscribe-unavailable.t
 
+          %aside.notes
+            %p A Unit test covers a single class
 
         -# Controller
         %section
@@ -353,6 +376,9 @@
                     %td t/subscribe.t
                   %tr
                     %td t/subscribe-unavailable.t
+
+          %aside.notes
+            %p Or maybe two
 
 
         -# Subscription
@@ -392,11 +418,18 @@
                   %tr
                     %td t/subscribe-unavailable.t
 
+          %aside.notes
+            %p Whereas a Feature test covers files across the whole stack
+            %p So this level of detail is interesting
 
 
         %section
           %h2 Devel::CoverX::Covered
 
+          %aside.notes
+            %p With this module
+            %p Devel::CoverX::Covered
+            %p you can get that detail
 
 
         -# -# Devel::Cover
@@ -444,6 +477,11 @@
           %p cover_db ⇝ covered/covered-0.01.db
 
 
+          %aside.notes
+            %p Run Devel::Cover like normal
+            %p Then you use this module
+            %p Generates an SQLite database with this extra detail
+            %p You don't use the SQLite database though
 
 
         -# CLI
@@ -466,6 +504,8 @@
                 &nbsp;
           %p
 
+          %aside.notes
+            %p Command line tool
 
 
         -# CLI
@@ -530,6 +570,10 @@
                 &nbsp;
           %p
 
+          %aside.notes
+            %p Finally we can take a source file
+            %p and see whether the subs in it are covered
+            %p &nbsp;
 
 
 
@@ -538,6 +582,12 @@
           %p vs
           %h1 Usable
 
+          %aside.notes
+            %p All the information we need to deal with Large Code Bases
+            %p Clearly Useful
+            %p But not very Usable
+            %p Quite clunky - typing things in a shell - copy/pasting file names around
+            %p Break our flow
 
 
         %section
@@ -545,6 +595,10 @@
           %p and
           %h1 Automatic
 
+          %aside.notes
+            %p What we want is something
+            %p Integrated into our editing environment
+            %p Automated so we don't have to do any manual steps
 
 
         %section
@@ -552,6 +606,11 @@
           %p &nbsp;
           %h2 Devel::PerlySense
 
+          %aside.notes
+            %p And if you use Emacs
+            %p you can get this
+            %p using the Devel::PerlySense module
+            %p This is what it looks like then
 
 
         %section
@@ -560,11 +619,25 @@
           %div
             %img(src = "images/goto_tests_source_file_other.png")
 
+          %aside.notes
+            %p If we're in a source file
+            %p Go to Other Test Files
+            %p A dropdown menu with test files
+            %p Choose one and it will open that file
+
+
+
         %section
           %h3 Source sub ⇒ Test files
           %p &nbsp;
           %div
             %img(src = "images/goto_tests_source_sub_other.png")
+
+          %aside.notes
+            %p Cursor on the sub declaration
+            %p The tests are limited to just that sub
+            %p If we have a Test file it also works the other way around
+
 
 
         %section.no-image-border
@@ -576,6 +649,12 @@
             %div.side
               %img(src = "images/covered_sub_green_source.png")
 
+          %aside.notes
+            %p Finally, we can use that list of subs
+            %p highlight in the source code itself
+            %p Look at the sub keyword and the little Green underline
+
+
         %section.no-image-border
           %h3 Visualise
           %h3 uncovered subs
@@ -584,6 +663,13 @@
               %img(src = "images/covered_sub_red_report.png")
             %div.side
               %img(src = "images/covered_sub_red_source.png")
+
+          %aside.notes
+            %p The Red line means it's not covered at all
+            %p The decoration is quite discrete -- Intentional
+            %p We don't want to turn the source into a Christmas Tree
+            %p We want an environment rich with Ambient information
+            %p It's there when we need it
 
 
 
@@ -594,6 +680,10 @@
             %li cpanm Devel::CoverX::Covered
             %li cpanm Devel::PerlySense
 
+          %aside.notes
+            %p This is how you get it
+
+
         %section
           %h1 GitHub
           %p &nbsp;
@@ -603,13 +693,19 @@
             %ul
               %a(href="https://github.com/jplindstrom/p5-Devel-PerlySense") https://github.com/jplindstrom/p5-Devel-PerlySense
 
+          %aside.notes
+            %p This is how you contribute
+
+
 
         %section(data-state="the-end")
           %h1 __END__
           %br
           %h3 Thank you!
 
-
+          %aside.notes
+            %p And that's how you go Beyond Devel::Cover
+            %p Thanks for listening
 
 
     %script{:src => "reveal.js/lib/js/head.min.js"}
